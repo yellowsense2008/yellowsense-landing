@@ -1,0 +1,65 @@
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Zap } from "lucide-react"
+
+export function HeroSection() {
+  return (
+    <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
+            <Zap className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-foreground">Innovating the Future</span>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 text-balance">
+            Where Deep Tech Meets <span className="text-primary">Human Innovation</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed text-pretty">
+            We are a collective of passionate technologists bound together by our deep tech knowledge and a passion for
+            using technology to drive business transformation.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+              Explore Our Products
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-foreground/20 hover:bg-secondary bg-transparent">
+              Learn More
+            </Button>
+          </div>
+        </div>
+
+        {/* Hero Image */}
+        <div className="mt-16 lg:mt-20 relative">
+          <div className="aspect-video max-w-5xl mx-auto rounded-2xl overflow-hidden border border-border shadow-2xl">
+            <img
+              src="/modern-technology-office-workspace-with-yellow-acc.jpg"
+              alt="YellowSense Technologies workspace"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-card border border-border rounded-xl px-6 py-4 shadow-lg">
+            <div className="flex items-center gap-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">500+</div>
+                <div className="text-sm text-muted-foreground">Clients</div>
+              </div>
+              <div className="w-px h-10 bg-border" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">10+</div>
+                <div className="text-sm text-muted-foreground">Years</div>
+              </div>
+              <div className="w-px h-10 bg-border" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">99%</div>
+                <div className="text-sm text-muted-foreground">Satisfaction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
