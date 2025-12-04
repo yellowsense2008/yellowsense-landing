@@ -42,7 +42,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Get Started</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,7 +64,6 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full">Get Started</Button>
             </div>
           </div>
         )}
