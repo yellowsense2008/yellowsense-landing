@@ -100,8 +100,7 @@ export function Footer() {
                   +91 98693 97868
                 </a>
               </li>
-              <li>123 Innovation Drive</li>
-              <li>Tech Valley, CA 94000</li>
+              <li>Bengaluru, Karnataka</li>
             </ul>
           </div>
         </div>

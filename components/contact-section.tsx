@@ -38,7 +38,7 @@ export function ContactSection() {
     {
       icon: MapPin,
       label: "Address",
-      value: "123 Innovation Drive, Tech Valley, CA 94000",
+      value: "Bengaluru, Karnataka",
       href: "#",
     },
   ]
