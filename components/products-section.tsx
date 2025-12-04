@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Shield, BarChart3, Cloud, Lock, Music } from "lucide-react"
+import { ArrowRight, Users, Shield, BarChart3, Cloud, Lock, Music, Network } from "lucide-react"
 
 export function ProductsSection() {
   const products = [
@@ -25,6 +25,13 @@ export function ProductsSection() {
       description:
         "Advanced AI-powered solutions for content creation, media processing, and digital experiences. Revolutionizing how businesses and creators work with multimedia content.",
       features: ["AI Content Creation", "Media Processing", "Digital Innovation"],
+    },
+    {
+      icon: Network,
+      title: "NetworkX",
+      description:
+        "Blockchain-based decentralized e-commerce platform with AI personalization engine. Delivering personalized recommendations and exclusive offers through Hyperledger Fabric chain-code technology.",
+      features: ["AI Personalization Engine", "Blockchain Security", "Decentralized E-commerce"],
     },
     {
       icon: Shield,
@@ -66,11 +73,12 @@ export function ProductsSection() {
           {products.map((product, index) => (
             <div
               key={index}
-              className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all hover:shadow-xl"
+              className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer animate-in fade-in slide-in-from-bottom-4 duration-700"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="flex items-start gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <product.icon className="w-7 h-7 text-primary" />
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                  <product.icon className="w-7 h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-foreground mb-3">{product.title}</h3>
@@ -85,11 +93,12 @@ export function ProductsSection() {
                       </span>
                     ))}
                   </div>
-                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 h-auto font-medium gap-1" onClick={() => {
+                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 h-auto font-medium gap-1 group/btn transition-all duration-300 hover:scale-105 hover:bg-primary/5 rounded-lg px-3 py-2" onClick={() => {
                     const urls = [
                       'https://yellowsense.in', // Maid/Nanny booking
                       'https://ccr.yellowsense.in/', // CCR
                       'https://melody.yellowsense.in', // Melody
+                      'https://networkx.yellowsense.in', // NetworkX
                       'https://yellowsense.in', // Cybersecurity
                       'https://yellowsense.in', // Data & Analytics
                       'https://yellowsense.in'  // Cloud Infrastructure
@@ -97,7 +106,7 @@ export function ProductsSection() {
                     window.open(urls[index], '_blank');
                   }}>
                     Click
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                   </Button>
                 </div>
               </div>

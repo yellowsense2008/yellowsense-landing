@@ -14,6 +14,7 @@ export function Footer() {
       { label: "Booking Maid/Nanny", href: "#" },
       { label: "Confidential Clean Rooms", href: "#" },
       { label: "Melody", href: "#" },
+      { label: "NetworkX", href: "#" },
       { label: "Cybersecurity", href: "#" },
       { label: "Data & Analytics", href: "#" },
       { label: "Cloud Solutions", href: "#" },
