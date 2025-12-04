@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Shield, BarChart3, Cloud } from "lucide-react"
+import { ArrowRight, Users, Shield, BarChart3, Cloud, Lock } from "lucide-react"
 
 export function ProductsSection() {
   const products = [
@@ -11,6 +11,13 @@ export function ProductsSection() {
       description:
         "Connect with trusted and verified maids and nannies for your household needs. Our platform ensures safe, reliable, and professional home help services with instant booking and flexible scheduling.",
       features: ["Instant Booking", "Verified Professionals", "Flexible Scheduling"],
+    },
+    {
+      icon: Lock,
+      title: "Confidential Clean Rooms (CCR)",
+      description:
+        "Empowering the next billion users through innovative data governance and predictive analytics solutions using AI/ML based Confidential Clean Rooms for secure, compliant lending.",
+      features: ["Automated Compliance Solutions", "Flow-Based Lending", "Inclusive Credit Ecosystem"],
     },
     {
       icon: Shield,
@@ -71,7 +78,16 @@ export function ProductsSection() {
                       </span>
                     ))}
                   </div>
-                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 h-auto font-medium gap-1" onClick={() => window.open('https://yellowsense.in', '_blank')}>
+                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 h-auto font-medium gap-1" onClick={() => {
+                    const urls = [
+                      'https://yellowsense.in', // Maid/Nanny booking
+                      'https://ccr.yellowsense.in/', // CCR
+                      'https://yellowsense.in', // Cybersecurity
+                      'https://yellowsense.in', // Data & Analytics
+                      'https://yellowsense.in'  // Cloud Infrastructure
+                    ];
+                    window.open(urls[index], '_blank');
+                  }}>
                     Click
                     <ArrowRight className="w-4 h-4" />
                   </Button>
