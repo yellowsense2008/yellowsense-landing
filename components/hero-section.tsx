@@ -1,7 +1,16 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap } from "lucide-react"
 
 export function HeroSection() {
+  const scrollToProducts = () => {
+    const productsSection = document.getElementById('products');
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
       <div className="container mx-auto px-4 lg:px-8">
@@ -21,7 +30,7 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2" onClick={scrollToProducts}>
               Explore Our Products
               <ArrowRight className="w-4 h-4" />
             </Button>

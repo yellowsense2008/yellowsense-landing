@@ -26,14 +26,14 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@yellowsense.tech",
-      href: "mailto:hello@yellowsense.tech",
+      value: "hr@yellowsense.in",
+      href: "mailto:hr@yellowsense.in",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+91 98693 97868",
+      href: "tel:+919869397868",
     },
     {
       icon: MapPin,

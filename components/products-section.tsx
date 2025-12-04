@@ -1,14 +1,16 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Brain, Shield, BarChart3, Cloud } from "lucide-react"
+import { ArrowRight, Users, Shield, BarChart3, Cloud } from "lucide-react"
 
 export function ProductsSection() {
   const products = [
     {
-      icon: Brain,
-      title: "Conversational AI",
+      icon: Users,
+      title: "Booking Maid/Nanny",
       description:
-        "Our team is the most experienced in the market, building conversational AI strategy, implementation and innovation across ChatGPT, chatbots, voicebots and language AI solutions.",
-      features: ["Natural Language Processing", "Custom Chatbots", "Voice Assistants"],
+        "Connect with trusted and verified maids and nannies for your household needs. Our platform ensures safe, reliable, and professional home help services with instant booking and flexible scheduling.",
+      features: ["Instant Booking", "Verified Professionals", "Flexible Scheduling"],
     },
     {
       icon: Shield,
@@ -69,8 +71,8 @@ export function ProductsSection() {
                       </span>
                     ))}
                   </div>
-                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 h-auto font-medium gap-1">
-                    Read more
+                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 h-auto font-medium gap-1" onClick={() => window.open('https://yellowsense.in', '_blank')}>
+                    Click
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </div>

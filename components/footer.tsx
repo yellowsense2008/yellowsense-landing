@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Linkedin, Twitter, Github, Instagram } from "lucide-react"
 
 export function Footer() {
@@ -10,7 +11,7 @@ export function Footer() {
       { label: "Contact", href: "#contact" },
     ],
     services: [
-      { label: "Conversational AI", href: "#" },
+      { label: "Booking Maid/Nanny", href: "#" },
       { label: "Cybersecurity", href: "#" },
       { label: "Data & Analytics", href: "#" },
       { label: "Cloud Solutions", href: "#" },
@@ -36,9 +37,13 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">Y</span>
-              </div>
+              <Image
+                src="/assets/logo.jpeg"
+                alt="YellowSense Technologies Logo"
+                width={40}
+                height={40}
+                className="rounded-lg"
+              />
               <span className="font-bold text-xl text-footer-foreground">YellowSense Technologies</span>
             </Link>
             <p className="text-footer-foreground/70 leading-relaxed mb-6">
@@ -91,13 +96,13 @@ export function Footer() {
             <h4 className="font-semibold text-footer-foreground mb-4">Contact</h4>
             <ul className="space-y-3 text-footer-foreground/70">
               <li>
-                <a href="mailto:hello@yellowsense.tech" className="hover:text-primary transition-colors">
-                  hello@yellowsense.tech
+                <a href="mailto:hr@yellowsense.in" className="hover:text-primary transition-colors">
+                  hr@yellowsense.in
                 </a>
               </li>
               <li>
-                <a href="tel:+15551234567" className="hover:text-primary transition-colors">
-                  +1 (555) 123-4567
+                <a href="tel:+919869397868" className="hover:text-primary transition-colors">
+                  +91 98693 97868
                 </a>
               </li>
               <li>123 Innovation Drive</li>
