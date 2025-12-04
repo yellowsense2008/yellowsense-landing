@@ -8,9 +8,9 @@ export function ProductsSection() {
   const products = [
     {
       category: "Household Services",
-      title: "Booking Maid/Nanny",
-      src: "/modern-technology-office-workspace-with-yellow-acc.jpg",
-      content: <DummyContent title="Booking Maid/Nanny" description="Connect with trusted and verified maids and nannies for your household needs. Our platform ensures safe, reliable, and professional home help services with instant booking and flexible scheduling." features={["Instant Booking", "Verified Professionals", "Flexible Scheduling"]} url="https://yellowsense.in" />,
+      title: "Nanny/Maid",
+      src: "/assets/nanny.png",
+      content: <DummyContent title="anny" description="Connect with trusted and verified maids and nannies for your household needs. Our platform ensures safe, reliable, and professional home help services with instant booking and flexible scheduling." features={["Instant Booking", "Verified Professionals", "Flexible Scheduling"]} url="https://yellowsense.in" />,
     },
     {
       category: "Data Governance",
