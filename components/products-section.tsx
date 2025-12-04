@@ -15,7 +15,7 @@ export function ProductsSection() {
     {
       category: "Data Governance",
       title: "Confidential Clean Rooms (CCR)",
-      src: "/modern-technology-office-workspace-with-yellow-acc.jpg",
+      src: "/assets/ccr.png",
       content: <DummyContent title="Confidential Clean Rooms (CCR)" description="Empowering the next billion users through innovative data governance and predictive analytics solutions using AI/ML based Confidential Clean Rooms for secure, compliant lending." features={["Automated Compliance Solutions", "Flow-Based Lending", "Inclusive Credit Ecosystem"]} url="https://ccr.yellowsense.in/" />,
     },
     {
