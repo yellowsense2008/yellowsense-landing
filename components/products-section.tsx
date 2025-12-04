@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Shield, BarChart3, Cloud, Lock } from "lucide-react"
+import { ArrowRight, Users, Shield, BarChart3, Cloud, Lock, Music } from "lucide-react"
 
 export function ProductsSection() {
   const products = [
@@ -18,6 +18,13 @@ export function ProductsSection() {
       description:
         "Empowering the next billion users through innovative data governance and predictive analytics solutions using AI/ML based Confidential Clean Rooms for secure, compliant lending.",
       features: ["Automated Compliance Solutions", "Flow-Based Lending", "Inclusive Credit Ecosystem"],
+    },
+    {
+      icon: Music,
+      title: "Melody",
+      description:
+        "Advanced AI-powered solutions for content creation, media processing, and digital experiences. Revolutionizing how businesses and creators work with multimedia content.",
+      features: ["AI Content Creation", "Media Processing", "Digital Innovation"],
     },
     {
       icon: Shield,
@@ -82,6 +89,7 @@ export function ProductsSection() {
                     const urls = [
                       'https://yellowsense.in', // Maid/Nanny booking
                       'https://ccr.yellowsense.in/', // CCR
+                      'https://melody.yellowsense.in', // Melody
                       'https://yellowsense.in', // Cybersecurity
                       'https://yellowsense.in', // Data & Analytics
                       'https://yellowsense.in'  // Cloud Infrastructure
