@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap } from "lucide-react"
+import { MacbookScroll } from "@/components/ui/macbook-scroll"
 
 export function HeroSection() {
   const scrollToProducts = () => {
@@ -41,15 +42,17 @@ export function HeroSection() {
         </div>
 
         {/* Hero Image */}
-        <div className="mt-16 lg:mt-20 relative">
-          <div className="aspect-video max-w-5xl mx-auto rounded-2xl overflow-hidden border border-border shadow-2xl">
-            <img
-              src="/modern-technology-office-workspace-with-yellow-acc.jpg"
-              alt="YellowSense Technologies workspace"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-card border border-border rounded-xl px-6 py-4 shadow-lg">
+        <div className="mt-16 lg:mt-20 relative w-full overflow-hidden">
+          <MacbookScroll
+            src="/modern-technology-office-workspace-with-yellow-acc.jpg"
+            showGradient={true}
+            title={
+              <span className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-500">
+                Built for Modern Needs
+              </span>
+            }
+          />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-card border border-border rounded-xl px-6 py-4 shadow-lg z-20">
             <div className="flex items-center gap-6">
               <div className="text-center">
                 <div className="text-2xl font-bold text-foreground">500+</div>
