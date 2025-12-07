@@ -11,15 +11,6 @@ export function Footer() {
       { label: "Products", href: "#products" },
       { label: "Contact", href: "#contact" },
     ],
-    services: [
-      { label: "Booking Maid/Nanny", href: "#" },
-      { label: "Confidential Clean Rooms", href: "#" },
-      { label: "Melody", href: "#" },
-      { label: "NetworkX", href: "#" },
-      { label: "Cybersecurity", href: "#" },
-      { label: "Data & Analytics", href: "#" },
-      { label: "Cloud Solutions", href: "#" },
-    ],
     legal: [
       { label: "Privacy Policy", href: "#" },
       { label: "Terms of Service", href: "#" },
@@ -37,7 +28,7 @@ export function Footer() {
   return (
     <footer className="bg-footer-bg text-footer-foreground">
       <div className="container mx-auto px-4 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6">
@@ -59,24 +50,10 @@ export function Footer() {
           </div>
 
           {/* Navigation */}
-          <div>
+          <div className="md:pl-24">
             <h4 className="font-semibold text-footer-foreground mb-4">Navigation</h4>
             <ul className="space-y-3">
               {footerLinks.navigation.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.href} className="text-footer-foreground/70 hover:text-primary transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-semibold text-footer-foreground mb-4">Services</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <Link href={link.href} className="text-footer-foreground/70 hover:text-primary transition-colors">
                     {link.label}
