@@ -28,7 +28,7 @@ export function Footer() {
   }
 
   const socialLinks = [
-    { title: "LinkedIn", icon: <Linkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
+    { title: "LinkedIn", icon: <Linkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "https://www.linkedin.com/company/yellowsense-technologies/posts/?feedView=all" },
     { title: "Twitter", icon: <Twitter className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
     { title: "GitHub", icon: <Github className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
     { title: "Instagram", icon: <Instagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },

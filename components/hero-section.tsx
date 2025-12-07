@@ -39,7 +39,7 @@ export function HeroSection() {
         {/* Hero Image */}
         <div className="mt-8 lg:mt-12 relative w-full overflow-hidden -mb-32 lg:-mb-40">
           <MacbookScroll
-            src="/modern-technology-office-workspace-with-yellow-acc.jpg"
+            src="/assets/cutomers.png"
             showGradient={true}
             title={
               <span className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-500">
