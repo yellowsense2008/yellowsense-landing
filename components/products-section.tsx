@@ -3,6 +3,7 @@ import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { motion } from "framer-motion";
 
 export function ProductsSection() {
   const categories = [
@@ -86,18 +87,42 @@ export function ProductsSection() {
     <section id="products" className="py-20 lg:py-32 w-full h-full bg-neutral-50 dark:bg-neutral-950">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Offerings</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6 text-balance animate-fade-in-up">
+          <motion.span 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-sm font-semibold text-primary uppercase tracking-wider"
+          >
+            Our Offerings
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6 text-balance"
+          >
             Choose Your Category
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed animate-fade-in-up delay-100">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-muted-foreground leading-relaxed"
+          >
             Whether you are an enterprise looking for tech solutions or a family seeking household help, we have you covered.
-          </p>
+          </motion.p>
         </div>
       </div>
-      <div className="animate-fade-in-up delay-200">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+      >
         <Carousel items={cards} />
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -114,7 +139,14 @@ const CategoryContent = ({ title, description, products }: { title: string, desc
       
       <div className="grid md:grid-cols-2 gap-6">
         {products.map((product, index) => (
-          <div key={index} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            key={index} 
+            className="bg-white dark:bg-neutral-900 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+          >
             <h3 className="text-xl font-bold text-neutral-800 dark:text-white mb-2">{product.title}</h3>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4 leading-relaxed">
               {product.desc}
@@ -134,7 +166,7 @@ const CategoryContent = ({ title, description, products }: { title: string, desc
               Learn More
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

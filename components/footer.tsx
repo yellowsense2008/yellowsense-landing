@@ -1,7 +1,9 @@
+"use client"
 import Link from "next/link"
 import Image from "next/image"
 import { Linkedin, Twitter, Github, Instagram } from "lucide-react"
 import { FloatingDock } from "@/components/ui/floating-dock"
+import { motion } from "framer-motion"
 
 export function Footer() {
   const footerLinks = {
@@ -27,7 +29,13 @@ export function Footer() {
 
   return (
     <footer className="bg-footer-bg text-footer-foreground">
-      <div className="container mx-auto px-4 lg:px-8 py-16">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="container mx-auto px-4 lg:px-8 py-16"
+      >
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -97,7 +105,7 @@ export function Footer() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   )
 }
