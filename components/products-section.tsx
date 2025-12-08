@@ -1,108 +1,81 @@
 "use client";
-import React from "react";
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import { motion } from "framer-motion";
+import { ArrowRight, Shield, Radio, LineChart, Cpu, Lock, ChevronRight } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion";
+
+const products = [
+  {
+    id: "pi-authentify",
+    name: "pi-authentify",
+    tagline: "AI-driven deepfake detection and media authentication",
+    description: "Our flagship solution for detecting synthetic media, deepfakes, and manipulated content. Built on cutting-edge AI models trained on millions of samples.",
+    icon: Shield,
+    color: "#4361ee",
+    features: ["Deepfake Detection", "Media Verification", "Content Authentication", "Real-time Analysis"]
+  },
+  {
+    id: "pi-vox",
+    name: "pi-vox",
+    tagline: "Multilingual speech intelligence",
+    description: "Advanced speech processing platform offering transcription, speaker diarization, and real-time translation across 100+ languages.",
+    icon: Radio,
+    color: "#06b6d4",
+    features: ["Speech-to-Text", "Speaker Recognition", "Language Translation", "Voice Analytics"]
+  },
+  {
+    id: "pi-scout",
+    name: "pi-scout",
+    tagline: "Big data fusion and analytics",
+    description: "Comprehensive threat intelligence platform that aggregates and analyzes data from multiple sources to uncover hidden patterns and risks.",
+    icon: LineChart,
+    color: "#10b981",
+    features: ["Data Aggregation", "Pattern Recognition", "Risk Assessment", "Predictive Analytics"]
+  },
+  {
+    id: "pi-sense",
+    name: "pi-sense",
+    tagline: "Advanced sensing solutions",
+    description: "Industrial IoT platform for real-time fault detection and predictive maintenance, reducing downtime and optimizing operations.",
+    icon: Cpu,
+    color: "#f59e0b",
+    features: ["Fault Detection", "Predictive Maintenance", "IoT Integration", "Real-time Monitoring"]
+  },
+  {
+    id: "pi-securechain",
+    name: "pi-securechain",
+    tagline: "Blockchain security",
+    description: "Tamper-proof evidence management and audit trail system built on blockchain technology for absolute data integrity.",
+    icon: Lock,
+    color: "#8b5cf6",
+    features: ["Blockchain Audit", "Evidence Management", "Tamper Detection", "Compliance Ready"]
+  },
+];
 
 export function ProductsSection() {
-  const categories = [
-    {
-      category: "For Businesses",
-      title: "Enterprise Solutions",
-      src: "/modern-technology-office-workspace-with-yellow-acc.jpg",
-      content: <CategoryContent
-        title="Enterprise Solutions"
-        description="Empowering industry leaders with cutting-edge technology. From secure data environments to blockchain e-commerce and AI media solutions."
-        products={[
-          {
-            title: "Confidential Clean Rooms (CCR)",
-            desc: "Secure, compliant data governance & predictive analytics for lending.",
-            url: "https://ccr.yellowsense.in/",
-            features: ["Data Privacy", "Compliance", "AI/ML"]
-          },
-          {
-            title: "Melody",
-            desc: "AI-powered content creation & media processing solutions.",
-            url: "https://melody.yellowsense.in",
-            features: ["Generative AI", "Media Processing", "Digital"]
-          },
-          {
-            title: "NetworkX",
-            desc: "Blockchain-based decentralized e-commerce & personalization.",
-            url: "https://networkx.yellowsense.in",
-            features: ["Blockchain", "DeFi", "Personalization"]
-          },
-          {
-            title: "Cybersecurity",
-            desc: "Proactive threat detection and security audits.",
-            url: "https://yellowsense.in",
-            features: ["Threat Detection", "Audits"]
-          },
-          {
-            title: "Data & Analytics",
-            desc: "Unlock business potential with advanced analytics.",
-            url: "https://yellowsense.in",
-            features: ["BI", "Predictive Analytics"]
-          },
-          {
-            title: "Cloud Infrastructure",
-            desc: "Scalable, secure, and cost-efficient cloud solutions.",
-            url: "https://yellowsense.in",
-            features: ["Migration", "DevOps"]
-          }
-        ]}
-      />,
-    },
-    {
-      category: "For Home",
-      title: "Household Services",
-      src: "/assets/nanny.png",
-      content: <CategoryContent
-        title="Household Services"
-        description="Transform your daily life with our comprehensive household solutions. From childcare and home cleaning to women's wellness products, we connect you with verified professionals and sustainable marketplaces that prioritize safety, quality, and peace of mind."
-        products={[
-          {
-            title: "Nanny & Maid Booking",
-            desc: "Connect with trusted, verified maids and nannies. Instant booking and flexible scheduling for your household needs.",
-            url: "https://yellowsense.in",
-            features: ["Instant Booking", "Verified Staff", "Secure"]
-          },
-          {
-            title: "EmpowerHer Platform",
-            desc: "Empowering women through sustainable menstrual health. A marketplace where women can sell and buy reusable products, creating income opportunities and promoting eco-friendly wellness solutions.",
-            url: "https://yellowsense.in",
-            features: ["Economic Empowerment", "Sustainable Products", "Women's Wellness"]
-          }
-        ]}
-      />,
-    },
-  ];
-
-  const cards = categories.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
-  ));
+  const [activeProduct, setActiveProduct] = useState(products[0]);
 
   return (
-    <section id="products" className="py-20 lg:py-32 w-full h-full bg-neutral-50 dark:bg-neutral-950">
+    <section id="products" className="py-20 lg:py-32">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-sm font-semibold text-primary uppercase tracking-wider"
           >
-            Our Offerings
+            Our Products
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6 text-balance"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6"
           >
-            Choose Your Category
+            Deep Tech Security Suite
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -111,64 +84,153 @@ export function ProductsSection() {
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground leading-relaxed"
           >
-            Whether you are an enterprise looking for tech solutions or a family seeking household help, we have you covered.
+            A comprehensive suite of AI-powered tools designed to detect fraud, authenticate media, and secure your digital infrastructure.
           </motion.p>
         </div>
+
+        {/* Products Grid */}
+        <div className="grid lg:grid-cols-12 gap-8">
+          {/* Product Navigation */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="lg:col-span-4 space-y-2"
+          >
+            {products.map((product) => (
+              <button
+                key={product.id}
+                onClick={() => setActiveProduct(product)}
+                className={`w-full text-left p-4 rounded-2xl transition-all group ${
+                  activeProduct.id === product.id
+                    ? "bg-card shadow-lg border border-border"
+                    : "hover:bg-card/50"
+                }`}
+              >
+                <div className="flex items-center gap-4">
+                  <div 
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors ${
+                      activeProduct.id === product.id ? "" : "bg-secondary"
+                    }`}
+                    style={{ 
+                      backgroundColor: activeProduct.id === product.id ? `${product.color}20` : undefined
+                    }}
+                  >
+                    <product.icon 
+                      className="w-6 h-6 transition-colors"
+                      style={{ 
+                        color: activeProduct.id === product.id ? product.color : "#6e6e73"
+                      }}
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className={`font-semibold transition-colors ${
+                      activeProduct.id === product.id ? "text-foreground" : "text-muted-foreground"
+                    }`}>
+                      {product.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground line-clamp-1">
+                      {product.tagline}
+                    </p>
+                  </div>
+                  <ChevronRight 
+                    className={`w-5 h-5 transition-all ${
+                      activeProduct.id === product.id 
+                        ? "text-primary translate-x-1" 
+                        : "text-muted-foreground/50 group-hover:translate-x-1"
+                    }`}
+                  />
+                </div>
+              </button>
+            ))}
+          </motion.div>
+
+          {/* Product Detail */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="lg:col-span-8"
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeProduct.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="bg-card rounded-3xl border border-border shadow-lg overflow-hidden"
+              >
+                {/* Product Header */}
+                <div 
+                  className="p-8 lg:p-12"
+                  style={{ background: `linear-gradient(135deg, ${activeProduct.color}10 0%, transparent 100%)` }}
+                >
+                  <div className="flex items-start gap-4 mb-6">
+                    <div 
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                      style={{ backgroundColor: `${activeProduct.color}20` }}
+                    >
+                      <activeProduct.icon 
+                        className="w-8 h-8" 
+                        style={{ color: activeProduct.color }}
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
+                        {activeProduct.name}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {activeProduct.tagline}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                    {activeProduct.description}
+                  </p>
+
+                  {/* Features */}
+                  <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                    {activeProduct.features.map((feature, index) => (
+                      <div 
+                        key={index}
+                        className="flex items-center gap-3 p-3 bg-background/50 rounded-xl"
+                      >
+                        <div 
+                          className="w-2 h-2 rounded-full"
+                          style={{ backgroundColor: activeProduct.color }}
+                        />
+                        <span className="text-sm font-medium text-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-4">
+                    <Button 
+                      size="lg"
+                      className="rounded-full px-8 gap-2"
+                      style={{ backgroundColor: activeProduct.color }}
+                    >
+                      Learn More
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                    <Button 
+                      size="lg"
+                      variant="outline"
+                      className="rounded-full px-8"
+                    >
+                      Request Demo
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
+        </div>
       </div>
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-      >
-        <Carousel items={cards} />
-      </motion.div>
     </section>
   );
 }
-
-const CategoryContent = ({ title, description, products }: { title: string, description: string, products: any[] }) => {
-  return (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-6 md:p-10 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl font-sans max-w-3xl mx-auto mb-10">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
-          {title}
-        </span>{" "}
-        {description}
-      </p>
-      
-      <div className="grid md:grid-cols-2 gap-6">
-        {products.map((product, index) => (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            key={index} 
-            className="bg-white dark:bg-neutral-900 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 className="text-xl font-bold text-neutral-800 dark:text-white mb-2">{product.title}</h3>
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4 leading-relaxed">
-              {product.desc}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {product.features.map((feature: string, idx: number) => (
-                <span key={idx} className="bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 px-2 py-1 rounded-md text-xs font-medium">
-                  {feature}
-                </span>
-              ))}
-            </div>
-            <Button 
-              size="sm" 
-              className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors group"
-              onClick={() => window.open(product.url, '_blank')}
-            >
-              Learn More
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-};

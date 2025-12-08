@@ -1,69 +1,65 @@
 "use client"
 import Link from "next/link"
-import Image from "next/image"
-import { Linkedin, Twitter, Github, Instagram } from "lucide-react"
-import { FloatingDock } from "@/components/ui/floating-dock"
+import { Linkedin, Twitter, Github, Instagram, MapPin, Mail } from "lucide-react"
 import { motion } from "framer-motion"
+import { FooterSpiral } from "./animated-blobs"
 
 export function Footer() {
-  const footerLinks = {
-    navigation: [
-      { label: "Home", href: "/" },
-      { label: "About Us", href: "#about" },
-      { label: "Products", href: "#products" },
-      { label: "Contact", href: "#contact" },
-    ],
-    legal: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Cookie Policy", href: "#" },
-    ],
-  }
+  const productLinks = [
+    { label: "pi-authentify", href: "#" },
+    { label: "pi-vox", href: "#" },
+    { label: "pi-scout", href: "#" },
+    { label: "pi-sense", href: "#" },
+    { label: "pi-securechain", href: "#" },
+  ]
+
+  const companyLinks = [
+    { label: "About us", href: "#about" },
+    { label: "Awards & events", href: "#" },
+    { label: "Our team", href: "#" },
+    { label: "Careers", href: "#" },
+  ]
+
+  const resourceLinks = [
+    { label: "Research", href: "#" },
+    { label: "Newsroom", href: "#" },
+    { label: "Blog", href: "#blog" },
+    { label: "FAQ", href: "#" },
+  ]
 
   const socialLinks = [
-    { title: "LinkedIn", icon: <Linkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "https://www.linkedin.com/company/yellowsense-technologies/posts/?feedView=all" },
-    { title: "Twitter", icon: <Twitter className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
-    { title: "GitHub", icon: <Github className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
-    { title: "Instagram", icon: <Instagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/yellowsense-technologies/", label: "LinkedIn" },
+    { icon: Github, href: "#", label: "GitHub" },
+    { icon: Twitter, href: "#", label: "X-Twitter" },
   ]
 
   return (
-    <footer className="bg-footer-bg text-footer-foreground">
+    <footer className="bg-footer-bg text-footer-foreground relative overflow-hidden">
+      {/* Animated Spiral Background */}
+      <FooterSpiral />
+
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="container mx-auto px-4 lg:px-8 py-16"
+        className="container mx-auto px-4 lg:px-8 py-16 relative z-10"
       >
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <Image
-                src="/assets/logo.jpeg"
-                alt="YellowSense Technologies Logo"
-                width={40}
-                height={40}
-                className="rounded-lg"
-              />
-              <span className="font-bold text-xl text-footer-foreground">YellowSense Technologies</span>
-            </Link>
-            <p className="text-footer-foreground/70 leading-relaxed mb-6">
-              Empowering businesses with innovative technology solutions that drive growth and digital transformation.
-            </p>
-            <div className="flex justify-start">
-              <FloatingDock items={socialLinks} />
-            </div>
-          </div>
-
-          {/* Navigation */}
-          <div className="md:pl-24">
-            <h4 className="font-semibold text-footer-foreground mb-4">Navigation</h4>
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
+          {/* Products */}
+          <div>
+            <h4 className="font-semibold text-footer-foreground mb-6 text-sm uppercase tracking-wider">
+              Products
+            </h4>
             <ul className="space-y-3">
-              {footerLinks.navigation.map((link, index) => (
+              {productLinks.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.href} className="text-footer-foreground/70 hover:text-primary transition-colors">
+                  <Link 
+                    href={link.href} 
+                    className="text-footer-foreground/60 hover:text-primary transition-colors text-sm"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -71,39 +67,111 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Company */}
           <div>
-            <h4 className="font-semibold text-footer-foreground mb-4">Contact</h4>
-            <ul className="space-y-3 text-footer-foreground/70">
-              <li>
-                <a href="mailto:hr@yellowsense.in" className="hover:text-primary transition-colors">
-                  hr@yellowsense.in
-                </a>
-              </li>
-              <li>
-                <a href="tel:+919869397868" className="hover:text-primary transition-colors">
-                  +91 98693 97868
-                </a>
-              </li>
-              <li>Bengaluru, Karnataka</li>
+            <h4 className="font-semibold text-footer-foreground mb-6 text-sm uppercase tracking-wider">
+              Company
+            </h4>
+            <ul className="space-y-3">
+              {companyLinks.map((link, index) => (
+                <li key={index}>
+                  <Link 
+                    href={link.href} 
+                    className="text-footer-foreground/60 hover:text-primary transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="font-semibold text-footer-foreground mb-6 text-sm uppercase tracking-wider">
+              Resources
+            </h4>
+            <ul className="space-y-3">
+              {resourceLinks.map((link, index) => (
+                <li key={index}>
+                  <Link 
+                    href={link.href} 
+                    className="text-footer-foreground/60 hover:text-primary transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="col-span-2 lg:col-span-2">
+            <h4 className="font-semibold text-footer-foreground mb-6 text-sm uppercase tracking-wider">
+              Contact
+            </h4>
+            <div className="space-y-4">
+              <a 
+                href="#" 
+                className="flex items-start gap-3 text-footer-foreground/60 hover:text-primary transition-colors text-sm group"
+              >
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+                <span>
+                  Bengaluru, Karnataka, India
+                  <span className="block text-xs text-footer-foreground/40 group-hover:text-primary/60 mt-1">
+                    Show on map
+                  </span>
+                </span>
+              </a>
+              <a 
+                href="mailto:hello@pi-labs.ai" 
+                className="flex items-center gap-3 text-footer-foreground/60 hover:text-primary transition-colors text-sm"
+              >
+                <Mail className="w-4 h-4 shrink-0" />
+                hello@pi-labs.ai
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-footer-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-footer-foreground/60 text-sm">© 2025 YellowSense Technologies. All rights reserved.</p>
-          <div className="flex gap-6">
-            {footerLinks.legal.map((link, index) => (
-              <Link
+        <div className="border-t border-footer-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-4">
+            <Link 
+              href="#" 
+              className="text-footer-foreground/40 text-xs hover:text-footer-foreground/60 transition-colors"
+            >
+              Terms & Conditions
+            </Link>
+            <span className="text-footer-foreground/20">|</span>
+            <Link 
+              href="#" 
+              className="text-footer-foreground/40 text-xs hover:text-footer-foreground/60 transition-colors"
+            >
+              Privacy Policy
+            </Link>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            {socialLinks.map((social, index) => (
+              <a
                 key={index}
-                href={link.href}
-                className="text-footer-foreground/60 text-sm hover:text-primary transition-colors"
+                href={social.href}
+                className="w-10 h-10 rounded-full bg-footer-foreground/5 hover:bg-footer-foreground/10 flex items-center justify-center transition-colors"
+                aria-label={social.label}
               >
-                {link.label}
-              </Link>
+                <social.icon className="w-4 h-4 text-footer-foreground/60" />
+              </a>
             ))}
           </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center mt-8">
+          <p className="text-footer-foreground/30 text-xs">
+            © {new Date().getFullYear()} pi-labs.ai. All rights reserved.
+          </p>
         </div>
       </motion.div>
     </footer>

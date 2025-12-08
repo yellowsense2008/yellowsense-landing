@@ -1,97 +1,201 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Zap } from "lucide-react"
-import { MacbookScroll } from "@/components/ui/macbook-scroll"
-import { motion } from "framer-motion"
+import { ArrowRight, Shield, Cpu, LineChart, Radio, Lock } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { AnimatedBlobs } from "./animated-blobs"
+
+const products = [
+  {
+    id: "pi-authentify",
+    tagline: "VERIFY TRUTH, FIGHT DEEPFAKES",
+    name: "authentify",
+    description: "AI-driven deepfake detection and media authentication for securing digital content integrity.",
+    icon: Shield,
+    color: "#4361ee",
+  },
+  {
+    id: "pi-vox",
+    tagline: "UNDERSTAND EVERY VOICE",
+    name: "vox",
+    description: "Multilingual speech intelligence with transcription, diarization, and real-time translation.",
+    icon: Radio,
+    color: "#06b6d4",
+  },
+  {
+    id: "pi-scout",
+    tagline: "UNCOVER HIDDEN INSIGHTS",
+    name: "scout",
+    description: "Big data fusion and analytics platform for comprehensive threat intelligence.",
+    icon: LineChart,
+    color: "#10b981",
+  },
+  {
+    id: "pi-sense",
+    tagline: "DETECT ANOMALIES INSTANTLY",
+    name: "sense",
+    description: "Advanced sensing solutions for industrial fault detection and predictive maintenance.",
+    icon: Cpu,
+    color: "#f59e0b",
+  },
+  {
+    id: "pi-securechain",
+    tagline: "SECURE THE RECORDS, PROTECT THE EVIDENCE",
+    name: "securechain",
+    description: "Secure tamper-proof evidence management with blockchain-based audit trails.",
+    icon: Lock,
+    color: "#8b5cf6",
+  },
+]
 
 export function HeroSection() {
-  const scrollToProducts = () => {
-    const productsSection = document.getElementById('products');
-    if (productsSection) {
-      productsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+
+  useEffect(() => {
+    if (!isAutoPlaying) return
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % products.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [isAutoPlaying])
+
+  const currentProduct = products[currentIndex]
 
   return (
-    <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 text-balance"
-          >
-            Where Deep Tech Meets <span className="text-primary">Human Innovation</span>
-          </motion.h1>
+    <section className="min-h-screen pt-24 pb-12 flex items-center relative overflow-hidden">
+      {/* Animated Blobs Background */}
+      <AnimatedBlobs position="left" />
+      <AnimatedBlobs position="right" />
 
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed text-pretty"
-          >
-            We are a collective of passionate technologists bound together by our deep tech knowledge and a passion for
-            using technology to drive business transformation.
-          </motion.p>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="bg-card/80 backdrop-blur-sm rounded-3xl shadow-sm border border-border/50 overflow-hidden">
+          <div className="grid lg:grid-cols-2 min-h-[600px]">
+            {/* Left Content */}
+            <div className="p-8 lg:p-16 flex flex-col justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentProduct.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <span className="inline-block text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-6 px-4 py-2 bg-secondary rounded-full">
+                    {currentProduct.tagline}
+                  </span>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 transition-all hover:scale-105" onClick={scrollToProducts}>
-              Explore Our Products
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-foreground/20 hover:bg-secondary bg-transparent transition-all hover:scale-105">
-              Learn More
-            </Button>
-          </motion.div>
-        </div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div 
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ backgroundColor: `${currentProduct.color}20` }}
+                    >
+                      <currentProduct.icon 
+                        className="w-5 h-5" 
+                        style={{ color: currentProduct.color }}
+                      />
+                    </div>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
+                      <span style={{ color: currentProduct.color }}>pi-</span>
+                      {currentProduct.name}
+                    </h1>
+                  </div>
 
-        {/* Hero Image */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-8 lg:mt-12 relative w-full overflow-hidden -mb-32 lg:-mb-40"
-        >
-          <MacbookScroll
-            src="/assets/cutomers.png"
-            showGradient={true}
-            title={
-              <span className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-500">
-                Built for Modern Needs
-              </span>
-            }
-          />
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="absolute bottom-40 left-1/2 -translate-x-1/2 bg-card border border-border rounded-xl px-6 py-4 shadow-lg z-20"
-          >
-            <div className="flex items-center gap-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">500+</div>
-                <div className="text-sm text-muted-foreground">Clients</div>
-              </div>
-              <div className="w-px h-10 bg-border" />
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">10+</div>
-                <div className="text-sm text-muted-foreground">Years</div>
-              </div>
-              <div className="w-px h-10 bg-border" />
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">99%</div>
-                <div className="text-sm text-muted-foreground">Satisfaction</div>
+                  <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
+                    {currentProduct.description}
+                  </p>
+
+                  <Button 
+                    size="lg" 
+                    className="rounded-full px-8 gap-2 bg-accent text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+                  >
+                    Explore more
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Dots Navigation */}
+              <div className="flex gap-2 mt-12">
+                {products.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setCurrentIndex(index)
+                      setIsAutoPlaying(false)
+                    }}
+                    className={`h-2 rounded-full transition-all ${
+                      index === currentIndex 
+                        ? "w-8 bg-primary" 
+                        : "w-2 bg-border hover:bg-muted-foreground"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+
+            {/* Right Illustration */}
+            <div className="relative bg-gradient-to-br from-secondary/50 to-background p-8 lg:p-16 flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentProduct.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative w-full max-w-md aspect-square"
+                >
+                  {/* Abstract illustration */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div 
+                      className="w-64 h-64 rounded-3xl rotate-12 opacity-20"
+                      style={{ backgroundColor: currentProduct.color }}
+                    />
+                    <div 
+                      className="absolute w-48 h-48 rounded-2xl -rotate-6 opacity-30"
+                      style={{ backgroundColor: currentProduct.color }}
+                    />
+                    <div 
+                      className="absolute w-32 h-32 rounded-xl rotate-45 opacity-40 flex items-center justify-center bg-card shadow-lg"
+                    >
+                      <currentProduct.icon 
+                        className="w-12 h-12 -rotate-45" 
+                        style={{ color: currentProduct.color }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Floating elements */}
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-10 right-10 w-16 h-16 bg-card rounded-xl shadow-lg flex items-center justify-center"
+                  >
+                    <Shield className="w-8 h-8 text-primary" />
+                  </motion.div>
+
+                  <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    className="absolute bottom-20 left-10 w-12 h-12 bg-card rounded-lg shadow-lg flex items-center justify-center"
+                  >
+                    <Cpu className="w-6 h-6 text-cyan-500" />
+                  </motion.div>
+
+                  <motion.div
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute top-1/3 left-5 w-10 h-10 bg-card rounded-lg shadow-lg flex items-center justify-center"
+                  >
+                    <Lock className="w-5 h-5 text-purple-500" />
+                  </motion.div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

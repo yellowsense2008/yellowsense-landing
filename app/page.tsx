@@ -1,20 +1,22 @@
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
+import { ClientsSection } from "@/components/clients-section"
 import { AboutSection } from "@/components/about-section"
 import { ProductsSection } from "@/components/products-section"
+import { NewsSection } from "@/components/news-section"
 import { ContactSection } from "@/components/contact-section"
-import { RegisteredSection } from "@/components/registered-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <AboutSection />
+      <ClientsSection />
       <ProductsSection />
+      <AboutSection />
+      <NewsSection />
       <ContactSection />
-      <RegisteredSection />
       <Footer />
     </main>
   )
