@@ -32,14 +32,14 @@ export function ContactSection() {
         >
           <div className="grid lg:grid-cols-2">
             {/* Left - Info */}
-            <div className="p-8 lg:p-16 bg-gradient-to-br from-primary to-primary/80 text-white">
-              <span className="inline-block text-xs font-semibold tracking-widest text-white/70 uppercase mb-4">
+            <div className="p-8 lg:p-16 bg-gradient-to-br from-amber-100 to-yellow-50 text-gray-800">
+              <span className="inline-block text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">
                 Get in Touch
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
                 Ready to Secure Your Digital Future?
               </h2>
-              <p className="text-lg text-white/80 leading-relaxed mb-12">
+              <p className="text-lg text-gray-600 leading-relaxed mb-12">
                 Connect with our team to learn how our deep tech solutions can protect 
                 your organization from fraud and synthetic media threats.
               </p>
@@ -47,36 +47,36 @@ export function ContactSection() {
               <div className="space-y-6">
                 <a 
                   href="mailto:hr@yellowsense.in" 
-                  className="flex items-center gap-4 text-white/80 hover:text-white transition-colors group"
+                  className="flex items-center gap-4 text-gray-700 hover:text-gray-900 transition-colors group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                    <Mail className="w-5 h-5" />
+                  <div className="w-12 h-12 rounded-xl bg-amber-200/50 flex items-center justify-center group-hover:bg-amber-200 transition-colors">
+                    <Mail className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
-                    <div className="text-sm text-white/60">Email</div>
+                    <div className="text-sm text-gray-500">Email</div>
                     <div className="font-medium">hr@yellowsense.in</div>
                   </div>
                 </a>
 
                 <a 
                   href="tel:+919869397868" 
-                  className="flex items-center gap-4 text-white/80 hover:text-white transition-colors group"
+                  className="flex items-center gap-4 text-gray-700 hover:text-gray-900 transition-colors group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                    <Phone className="w-5 h-5" />
+                  <div className="w-12 h-12 rounded-xl bg-amber-200/50 flex items-center justify-center group-hover:bg-amber-200 transition-colors">
+                    <Phone className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
-                    <div className="text-sm text-white/60">Phone</div>
+                    <div className="text-sm text-gray-500">Phone</div>
                     <div className="font-medium">+91 98693 97868</div>
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 text-white/80">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                    <MapPin className="w-5 h-5" />
+                <div className="flex items-center gap-4 text-gray-700">
+                  <div className="w-12 h-12 rounded-xl bg-amber-200/50 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
-                    <div className="text-sm text-white/60">Location</div>
+                    <div className="text-sm text-gray-500">Location</div>
                     <div className="font-medium">Bengaluru, Karnataka</div>
                   </div>
                 </div>
@@ -151,7 +151,7 @@ export function ContactSection() {
                 <Button 
                   type="submit" 
                   size="lg"
-                  className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90 gap-2"
+                  className="w-full rounded-full bg-amber-400 text-gray-900 hover:bg-amber-500 gap-2"
                 >
                   Send Message
                   <ArrowRight className="w-4 h-4" />

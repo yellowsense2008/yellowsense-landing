@@ -14,6 +14,8 @@ const products = [
     description: "AI-powered transaction monitoring and behavioral analysis to prevent financial fraud before it happens.",
     icon: Shield,
     color: "#fcd34d",
+    hasVideo: true,
+    videoSrc: "/video/Yellowsense-fraud-detection-animation.mp4",
   },
   {
     id: "fault-detection",
@@ -22,6 +24,8 @@ const products = [
     description: "Advanced sensing solutions for real-time fault detection and predictive maintenance in industrial systems.",
     icon: Cpu,
     color: "#fbbf24",
+    hasVideo: true,
+    videoSrc: "/video/sensor-final-1764092032100.mp4",
   },
   {
     id: "clean-rooms",
@@ -30,6 +34,8 @@ const products = [
     description: "Secure, compliant data environments for sensitive data processing with advanced privacy controls.",
     icon: Database,
     color: "#fcd34d",
+    hasVideo: true,
+    videoSrc: "/video/mule-combined.mp4",
   },
   {
     id: "analytics",
@@ -38,6 +44,7 @@ const products = [
     description: "Big data fusion and analytics platform for comprehensive threat intelligence and business insights.",
     icon: LineChart,
     color: "#fde047",
+    hasVideo: false,
   },
   {
     id: "cybersecurity",
@@ -46,6 +53,7 @@ const products = [
     description: "Proactive threat detection and security audits to safeguard your critical infrastructure.",
     icon: Lock,
     color: "#fbbf24",
+    hasVideo: false,
   },
 ]
 
@@ -64,12 +72,31 @@ export function HeroSection() {
   const currentProduct = products[currentIndex]
 
   return (
-    <section className="min-h-screen pt-24 pb-12 flex items-center relative overflow-hidden">
+    <section className="min-h-screen pt-24 pb-12 flex flex-col items-center relative overflow-hidden">
       {/* Animated Blobs Background */}
       <AnimatedBlobs position="left" />
       <AnimatedBlobs position="right" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        {/* Top Tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-4">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            <span className="text-xs font-medium text-blue-600 uppercase tracking-wider">Enterprise AI Solutions</span>
+          </div>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-foreground">
+            Securing the Future of <span className="bg-gradient-to-r from-blue-500 via-amber-500 to-emerald-500 bg-clip-text text-transparent">Intelligent Enterprise</span>.
+          </h2>
+        </motion.div>
+
         <div className="bg-card/80 backdrop-blur-sm rounded-3xl shadow-sm border border-border/50 overflow-hidden">
           <div className="grid lg:grid-cols-2 min-h-[600px]">
             {/* Left Content */}
@@ -135,8 +162,8 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Right Illustration */}
-            <div className="relative bg-gradient-to-br from-secondary/50 to-background p-8 lg:p-16 flex items-center justify-center">
+            {/* Right Illustration / Video */}
+            <div className="relative bg-gradient-to-br from-secondary/30 to-background p-6 lg:p-10 flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentProduct.id}
@@ -144,52 +171,69 @@ export function HeroSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  className="relative w-full max-w-md aspect-square"
+                  className="relative w-full flex items-center justify-center"
                 >
-                  {/* Abstract illustration */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div 
-                      className="w-64 h-64 rounded-3xl rotate-12 opacity-20"
-                      style={{ backgroundColor: currentProduct.color }}
-                    />
-                    <div 
-                      className="absolute w-48 h-48 rounded-2xl -rotate-6 opacity-30"
-                      style={{ backgroundColor: currentProduct.color }}
-                    />
-                    <div 
-                      className="absolute w-32 h-32 rounded-xl rotate-45 opacity-40 flex items-center justify-center bg-card shadow-lg"
-                    >
-                      <currentProduct.icon 
-                        className="w-12 h-12 -rotate-45" 
-                        style={{ color: currentProduct.color }}
+                  {/* Show video for products with videos */}
+                  {currentProduct.hasVideo && currentProduct.videoSrc ? (
+                    <div className="w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl border border-border/30">
+                      <video
+                        key={currentProduct.id}
+                        src={currentProduct.videoSrc}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto object-contain bg-white"
                       />
                     </div>
-                  </div>
+                  ) : (
+                    <>
+                      {/* Abstract illustration for other products */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div 
+                          className="w-64 h-64 rounded-3xl rotate-12 opacity-20"
+                          style={{ backgroundColor: currentProduct.color }}
+                        />
+                        <div 
+                          className="absolute w-48 h-48 rounded-2xl -rotate-6 opacity-30"
+                          style={{ backgroundColor: currentProduct.color }}
+                        />
+                        <div 
+                          className="absolute w-32 h-32 rounded-xl rotate-45 opacity-40 flex items-center justify-center bg-card shadow-lg"
+                        >
+                          <currentProduct.icon 
+                            className="w-12 h-12 -rotate-45" 
+                            style={{ color: currentProduct.color }}
+                          />
+                        </div>
+                      </div>
 
-                  {/* Floating elements */}
-                  <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-10 right-10 w-16 h-16 bg-card rounded-xl shadow-lg flex items-center justify-center"
-                  >
-                    <Shield className="w-8 h-8 text-yellow-400" />
-                  </motion.div>
+                      {/* Floating elements */}
+                      <motion.div
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute top-10 right-10 w-16 h-16 bg-card rounded-xl shadow-lg flex items-center justify-center"
+                      >
+                        <Shield className="w-8 h-8 text-yellow-400" />
+                      </motion.div>
 
-                  <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                    className="absolute bottom-20 left-10 w-12 h-12 bg-card rounded-lg shadow-lg flex items-center justify-center"
-                  >
-                    <Cpu className="w-6 h-6 text-amber-400" />
-                  </motion.div>
+                      <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                        className="absolute bottom-20 left-10 w-12 h-12 bg-card rounded-lg shadow-lg flex items-center justify-center"
+                      >
+                        <Cpu className="w-6 h-6 text-amber-400" />
+                      </motion.div>
 
-                  <motion.div
-                    animate={{ y: [0, -8, 0] }}
-                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute top-1/3 left-5 w-10 h-10 bg-card rounded-lg shadow-lg flex items-center justify-center"
-                  >
-                    <Lock className="w-5 h-5 text-amber-400" />
-                  </motion.div>
+                      <motion.div
+                        animate={{ y: [0, -8, 0] }}
+                        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                        className="absolute top-1/3 left-5 w-10 h-10 bg-card rounded-lg shadow-lg flex items-center justify-center"
+                      >
+                        <Lock className="w-5 h-5 text-amber-400" />
+                      </motion.div>
+                    </>
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>

@@ -11,30 +11,30 @@
 }
 
 :root {
-  /* pi-labs.ai inspired - Clean light theme with blue accent */
-  --background: #f5f5f7;
+  /* Yellowsense - Light yellowish tint theme */
+  --background: #fffef9;
   --foreground: #1d1d1f;
-  --card: #ffffff;
+  --card: #fffffe;
   --card-foreground: #1d1d1f;
-  --popover: #ffffff;
+  --popover: #fffffe;
   --popover-foreground: #1d1d1f;
-  --primary: #4361ee;
-  --primary-foreground: #ffffff;
-  --secondary: #e8e8ed;
+  --primary: #fbbf24;
+  --primary-foreground: #1d1d1f;
+  --secondary: #fefce8;
   --secondary-foreground: #1d1d1f;
-  --muted: #e8e8ed;
+  --muted: #fef9e7;
   --muted-foreground: #6e6e73;
-  --accent: #e7edff;
-  --accent-foreground: #4361ee;
+  --accent: #fef3c7;
+  --accent-foreground: #d97706;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #d2d2d7;
-  --input: #d2d2d7;
-  --ring: #4361ee;
-  --chart-1: #4361ee;
-  --chart-2: #06b6d4;
-  --chart-3: #10b981;
-  --chart-4: #f59e0b;
+  --border: #fde68a;
+  --input: #fde68a;
+  --ring: #fbbf24;
+  --chart-1: #fbbf24;
+  --chart-2: #f59e0b;
+  --chart-3: #fcd34d;
+  --chart-4: #fde047;
   --chart-5: #ef4444;
   --radius: 1rem;
   

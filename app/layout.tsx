@@ -8,18 +8,10 @@ export const metadata: Metadata = {
   description:
     "Yellowsense Technologies delivers AI-powered solutions for fraud detection, industrial fault detection, and cybersecurity to protect and optimize your operations.",
   icons: {
-    icon: [
-      { url: '/assets/logo.jpeg', sizes: 'any', type: 'image/jpeg' },
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/icon-dark-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: '/assets/logo.jpeg',
     shortcut: '/assets/logo.jpeg',
+    apple: '/assets/logo.jpeg',
   },
-  manifest: '/manifest.json',
 }
 
 export default function RootLayout({
@@ -29,6 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/assets/logo.jpeg" type="image/jpeg" />
+        <link rel="shortcut icon" href="/assets/logo.jpeg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/assets/logo.jpeg" />
+      </head>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
