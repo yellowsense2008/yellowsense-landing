@@ -8,37 +8,37 @@ const teamMembers = [
     name: "Prakhar Goyal",
     designation: "CEO & Founder",
     description: "Visionary leader driving innovation in enterprise AI and security solutions.",
-    linkedin: "https://linkedin.com/in/",
+    linkedin: "https://www.linkedin.com/in/prakhar-goyal-1744021b/",
   },
   {
     name: "Komal Goyal",
     designation: "COO",
     description: "Operations leader overseeing business strategy, team coordination, and delivery excellence.",
-    linkedin: "https://linkedin.com/in/",
+    linkedin: "https://www.linkedin.com/in/komal-goyal-51b09555/",
   },
   {
     name: "Animesh Sharma",
     designation: "Backend Engineer",
     description: "Backend engineer specializing in scalable APIs, database architecture, and system performance.",
-    linkedin: "https://linkedin.com/in/",
+    linkedin: "https://www.linkedin.com/in/animesh-sharma-144732250/",
   },
   {
     name: "Kushagra",
     designation: "Frontend Engineer",
     description: "Frontend engineer crafting intuitive user interfaces and exceptional user experiences.",
-    linkedin: "https://linkedin.com/in/",
+    linkedin: "https://www.linkedin.com/in/kushagra2503/",
   },
   {
     name: "Abhimanyu Malik",
     designation: "Backend Engineer",
     description: "Backend engineer specializing in server-side architecture, API development, and cloud infrastructure.",
-    linkedin: "https://linkedin.com/in/",
+    linkedin: "https://www.linkedin.com/in/abhimanyu-malik-19190622a/",
   },
   {
     name: "Talha Nagima",
     designation: "Backend Engineer",
     description: "Backend engineer focused on database design, system optimization, and robust security implementations.",
-    linkedin: "https://linkedin.com/in/",
+    linkedin: "https://www.linkedin.com/in/talhanagina306/",
   },
 ]
 
