@@ -205,6 +205,19 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Legal Details */}
+        <div className="border-t border-footer-foreground/10 py-6">
+          <div className="flex flex-wrap gap-x-8 gap-y-2 text-footer-foreground/60 text-sm mb-4">
+            <span><strong className="text-footer-foreground/80">CIN:</strong> U-62099-KA-2023-PTC-174648</span>
+            <span><strong className="text-footer-foreground/80">PAN:</strong> AABCY6908P</span>
+            <span><strong className="text-footer-foreground/80">TAN:</strong> BLRY02955B</span>
+          </div>
+          <div className="flex flex-wrap gap-x-8 gap-y-2 text-footer-foreground/60 text-sm">
+            <span><strong className="text-footer-foreground/80">Startup India:</strong> DIPP – 138388</span>
+            <span><strong className="text-footer-foreground/80">MSME Udyog Aadhaar:</strong> UDYAM-KR-03-0293956</span>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="border-t border-footer-foreground/10 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4 text-footer-foreground/40 text-xs">
