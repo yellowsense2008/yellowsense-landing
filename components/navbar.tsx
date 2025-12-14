@@ -14,19 +14,20 @@ export function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     { 
-      href: "#products", 
-      label: "Our Products",
+      href: "/#products", 
+      label: "Products",
       dropdown: [
-        { label: "Fraud Detection AI", desc: "Real-time transaction monitoring", href: "#products" },
-        { label: "Industrial Fault Detection", desc: "AI-powered anomaly detection", href: "#products" },
-        { label: "Confidential Clean Rooms", desc: "Secure data environments", href: "#products" },
-        { label: "Predictive Maintenance", desc: "Prevent equipment failures", href: "#products" },
-        { label: "Threat Intelligence", desc: "Proactive cyber defense", href: "#products" },
+        { label: "Fraud Detection", desc: "Real-time transaction monitoring", href: "/products/fraud-detection" },
+        { label: "Industrial Fault Detection", desc: "AI-powered anomaly detection", href: "/products/fault-detection" },
+        { label: "Confidential Clean Rooms", desc: "Secure data environments", href: "/products/clean-rooms" },
+        { label: "Data Analytics", desc: "Big data insights platform", href: "/products/analytics" },
+        { label: "Cybersecurity", desc: "Proactive threat detection", href: "/products/cybersecurity" },
+        { label: "Nanny Verification", desc: "Trust & safety for families", href: "/products/nanny-verification" },
       ]
     },
-    { href: "#about", label: "About Us" },
-    { href: "#team", label: "Team" },
-    { href: "#contact", label: "Contact" },
+    { href: "/#about", label: "About Us" },
+    { href: "/#team", label: "Team" },
+    { href: "/#contact", label: "Contact" },
   ]
 
   return (

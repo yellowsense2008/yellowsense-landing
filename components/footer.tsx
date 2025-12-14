@@ -27,17 +27,18 @@ export function Footer() {
   const tY6 = useTransform(springY, [0, 1], ["-600%", "0%"])
 
   const productLinks = [
-    { label: "Fraud Detection AI", href: "#products" },
-    { label: "Industrial Fault Detection", href: "#products" },
-    { label: "Confidential Clean Rooms", href: "#products" },
-    { label: "Data & Analytics", href: "#products" },
-    { label: "Cybersecurity Solutions", href: "#products" },
+    { label: "Fraud Detection", href: "/products/fraud-detection" },
+    { label: "Industrial Fault Detection", href: "/products/fault-detection" },
+    { label: "Confidential Clean Rooms", href: "/products/clean-rooms" },
+    { label: "Data Analytics", href: "/products/analytics" },
+    { label: "Cybersecurity", href: "/products/cybersecurity" },
+    { label: "Nanny Verification", href: "/products/nanny-verification" },
   ]
 
   const companyLinks = [
-    { label: "About us", href: "#about" },
+    { label: "About us", href: "/#about" },
     { label: "Awards & events", href: "#" },
-    { label: "Our team", href: "#" },
+    { label: "Our team", href: "/#team" },
     { label: "Careers", href: "#" },
   ]
 
