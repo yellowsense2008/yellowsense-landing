@@ -51,7 +51,7 @@ const teamMembers = [
     name:"Binita Mahto",
     designation: "Frontend Engineer",
     description: "Frontend engineer crafting intuitive user interfaces and exceptional user experiences.",
-    linkedin: "https://www.linkedin.com/in/binita-mahto-19190622a/",
+    linkedin: "https://www.linkedin.com/in/binitamahto/",
     image: "/profile/binita.jpeg",
   }
 ]
