@@ -19,7 +19,7 @@ const iconMap: Record<IconName, LucideIcon> = {
 
 export function HeroSection() {
   return (
-    <section className="pt-32 pb-20 relative overflow-hidden">
+    <section className="pt-[28rem] lg:pt-[32rem] pb-20 relative overflow-hidden">
       {/* Animated Blobs Background */}
       <AnimatedBlobs position="left" />
       <AnimatedBlobs position="right" />
@@ -81,8 +81,38 @@ export function HeroSection() {
           </div>
         </motion.div>
 
+        {/* Our Solutions Section */}
+        <div className="max-w-3xl mx-auto text-center mb-12 pt-20 lg:pt-32">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-sm font-semibold text-amber-500 uppercase tracking-wider"
+          >
+            Our Solutions
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6"
+          >
+            Deep Tech & Cybersecurity
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-muted-foreground leading-relaxed"
+          >
+            Comprehensive solutions for fraud prevention, industrial fault detection, and enterprise security.
+          </motion.p>
+        </div>
+
         {/* Products Grid with 3D Cards */}
-        <div id="products" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div id="products" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto items-stretch">
           {products.map((product, index) => {
             const Icon = iconMap[product.iconName]
             return (
@@ -91,10 +121,11 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="h-full"
               >
-                <Link href={`/products/${product.slug}`}>
-                  <CardContainer containerClassName="py-0" className="w-full">
-                    <CardBody className="bg-card relative group/card border border-border rounded-2xl p-6 h-auto w-full hover:shadow-2xl hover:border-primary/50 transition-shadow duration-300">
+                <Link href={`/products/${product.slug}`} className="h-full block">
+                  <CardContainer containerClassName="py-0 h-full" className="w-full h-full">
+                    <CardBody className="bg-card relative group/card border border-border rounded-2xl p-6 h-full w-full flex flex-col hover:shadow-2xl hover:border-primary/50 transition-shadow duration-300">
                       {/* Hover gradient overlay */}
                       <div 
                         className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover/card:opacity-5 transition-opacity duration-300 rounded-2xl`}
@@ -132,7 +163,7 @@ export function HeroSection() {
                       {/* Description */}
                       <CardItem
                         translateZ={20}
-                        className="text-sm text-muted-foreground leading-relaxed mb-4"
+                        className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow"
                       >
                         {product.shortDescription}
                       </CardItem>
@@ -140,7 +171,7 @@ export function HeroSection() {
                       {/* Arrow */}
                       <CardItem
                         translateZ={60}
-                        className="flex items-center gap-2 text-sm font-medium text-primary group-hover/card:text-primary/80 transition-colors"
+                        className="flex items-center gap-2 text-sm font-medium text-primary group-hover/card:text-primary/80 transition-colors mt-auto"
                       >
                         Learn more
                         <ArrowRight className="w-4 h-4 group-hover/card:translate-x-1 transition-transform" />
