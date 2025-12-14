@@ -7,8 +7,8 @@ export const products = [
     shortDescription: "AI-powered transaction monitoring and behavioral analysis to prevent financial fraud before it happens.",
     description: "Our advanced Fraud Detection AI leverages machine learning and behavioral analytics to identify suspicious patterns in real-time. By analyzing transaction data, user behavior, and contextual signals, we help financial institutions and enterprises prevent fraud before it impacts their bottom line.",
     iconName: "Shield" as const,
-    color: "#fcd34d",
-    gradient: "from-yellow-400 to-amber-500",
+    color: "#eab308", // Yellow-500
+    gradient: "from-yellow-500 to-amber-600",
     hasVideo: true,
     videoSrc: "/video/Yellowsense-fraud-detection-animation.mp4",
     features: [
@@ -33,8 +33,8 @@ export const products = [
     shortDescription: "Advanced sensing solutions for real-time fault detection and predictive maintenance in industrial systems.",
     description: "Our Industrial Fault Detection system uses IoT sensors and AI algorithms to monitor equipment health in real-time. By predicting failures before they occur, we help manufacturers reduce downtime, extend equipment life, and optimize maintenance schedules.",
     iconName: "Cpu" as const,
-    color: "#fbbf24",
-    gradient: "from-amber-400 to-orange-500",
+    color: "#f97316", // Orange-500
+    gradient: "from-orange-500 to-red-600",
     hasVideo: true,
     videoSrc: "/video/sensor-final-1764092032100.mp4",
     features: [
@@ -59,8 +59,8 @@ export const products = [
     shortDescription: "Secure, compliant data environments for sensitive data processing with advanced privacy controls.",
     description: "Our Confidential Clean Rooms provide isolated, secure environments for processing sensitive data. With advanced encryption, access controls, and compliance features, organizations can collaborate on data while maintaining privacy and regulatory compliance.",
     iconName: "Database" as const,
-    color: "#fcd34d",
-    gradient: "from-yellow-400 to-lime-500",
+    color: "#10b981", // Emerald-500
+    gradient: "from-emerald-500 to-teal-600",
     hasVideo: false,
     features: [
       "End-to-end encryption",
@@ -84,8 +84,8 @@ export const products = [
     shortDescription: "Advanced text-to-speech AI model delivering natural, human-like voice synthesis for enterprise applications.",
     description: "Our Sys Pin TTS Model leverages cutting-edge deep learning to generate high-quality, natural-sounding speech from text. Built with state-of-the-art neural networks, it supports multiple languages, voices, and emotional tones, making it ideal for voice assistants, accessibility tools, content creation, and automated communication systems.",
     iconName: "Volume2" as const,
-    color: "#fde047",
-    gradient: "from-yellow-300 to-amber-400",
+    color: "#3b82f6", // Blue-500
+    gradient: "from-blue-500 to-indigo-600",
     hasVideo: false,
     features: [
       "Neural voice synthesis",
@@ -109,8 +109,8 @@ export const products = [
     shortDescription: "Proactive threat detection and security audits to safeguard your critical infrastructure.",
     description: "Our Cybersecurity solutions provide comprehensive protection against digital threats. From vulnerability assessments to continuous monitoring, we help organizations identify and mitigate risks before they become breaches.",
     iconName: "Lock" as const,
-    color: "#fbbf24",
-    gradient: "from-amber-400 to-red-500",
+    color: "#ef4444", // Red-500
+    gradient: "from-red-500 to-rose-600",
     hasVideo: false,
     features: [
       "Vulnerability assessment",
@@ -134,8 +134,8 @@ export const products = [
     shortDescription: "Enterprise-grade encryption solutions with advanced cryptographic protocols for secure data storage, transmission, and access control.",
     description: "Our Encryption & Security Platform provides robust cryptographic solutions for enterprises requiring the highest levels of data protection. Built with state-of-the-art encryption algorithms and key management systems, it ensures end-to-end security for sensitive data across storage, transmission, and processing workflows. The platform supports multiple encryption standards, secure key exchange protocols, and granular access controls for comprehensive data security.",
     iconName: "Key" as const,
-    color: "#8b5cf6",
-    gradient: "from-purple-400 to-indigo-500",
+    color: "#8b5cf6", // Violet-500
+    gradient: "from-violet-500 to-purple-600",
     hasVideo: false,
     features: [
       "Advanced cryptographic algorithms",

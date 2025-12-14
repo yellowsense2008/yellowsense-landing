@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { AnimatedBlobs } from "./animated-blobs"
 import { products, IconName } from "@/lib/products"
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card"
+import { Cover } from "@/components/ui/cover"
 
 const iconMap: Record<IconName, LucideIcon> = {
   Shield,
@@ -40,9 +41,7 @@ export function HeroSection() {
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Securing the Future of{" "}
-            <span className="bg-gradient-to-r from-blue-500 via-amber-500 to-emerald-500 bg-clip-text text-transparent">
-              Intelligent Enterprise
-            </span>
+            <Cover className="text-black">Intelligent Enterprise</Cover>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Deep tech solutions for fraud prevention, industrial security, and enterprise intelligence.
@@ -57,7 +56,7 @@ export function HeroSection() {
           className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 mb-16 max-w-4xl mx-auto shadow-sm"
         >
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4 text-center">
-            Where <span className="text-amber-500">Deep Tech</span> Meets Real-World Impact
+            Where <span className="text-primary">Deep Tech</span> Meets Real-World Impact
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-center mb-8">
             Yellowsense Technologies is a Bengaluru-based deep tech company building AI-driven solutions 
@@ -95,7 +94,7 @@ export function HeroSection() {
               >
                 <Link href={`/products/${product.slug}`}>
                   <CardContainer containerClassName="py-0" className="w-full">
-                    <CardBody className="bg-card relative group/card border border-border rounded-2xl p-6 h-auto w-full hover:shadow-2xl hover:border-amber-300 transition-shadow duration-300">
+                    <CardBody className="bg-card relative group/card border border-border rounded-2xl p-6 h-auto w-full hover:shadow-2xl hover:border-primary/50 transition-shadow duration-300">
                       {/* Hover gradient overlay */}
                       <div 
                         className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover/card:opacity-5 transition-opacity duration-300 rounded-2xl`}
@@ -141,7 +140,7 @@ export function HeroSection() {
                       {/* Arrow */}
                       <CardItem
                         translateZ={60}
-                        className="flex items-center gap-2 text-sm font-medium text-amber-500 group-hover/card:text-amber-600 transition-colors"
+                        className="flex items-center gap-2 text-sm font-medium text-primary group-hover/card:text-primary/80 transition-colors"
                       >
                         Learn more
                         <ArrowRight className="w-4 h-4 group-hover/card:translate-x-1 transition-transform" />
