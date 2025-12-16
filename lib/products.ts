@@ -86,7 +86,8 @@ export const products = [
     iconName: "Volume2" as const,
     color: "#3b82f6", // Blue-500
     gradient: "from-blue-500 to-indigo-600",
-    hasVideo: false,
+    hasVideo: true,
+    videoSrc: "/video/tts-web.mp4",
     features: [
       "Neural voice synthesis",
       "Multi-language support",
