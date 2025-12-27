@@ -153,6 +153,32 @@ export const products = [
       { title: "Compliance Ready", description: "Meet regulatory requirements effortlessly" },
     ],
   },
+  {
+    id: "document-processing",
+    slug: "document-processing",
+    tagline: "INTELLIGENT DOCUMENT AUTOMATION",
+    name: "Document Processing",
+    shortDescription: "Advanced AI that restores, extracts, and summarizes data from low-quality scans and complex legal documents.",
+    description: "Transform your document workflow with our advanced Intelligent Document Processing engine, capable of handling challenging inputs—from low-quality scans to dense legal affidavits. Our system combines high-precision OCR with Natural Language Processing (NLP) to restore legibility, extract critical data, and generate intelligent summaries, turning unstructured paperwork into structured, actionable insights.",
+    iconName: "FileText" as const,
+    color: "#06b6d4", // Cyan-500
+    gradient: "from-cyan-500 to-blue-600",
+    hasVideo: true,
+    videoSrc: "/video/idp-animation-1766488235755.mp4",
+    features: [
+      "Low-quality scan enhancement",
+      "Legal document summarization",
+      "Handwriting recognition",
+      "NLP-based entity extraction",
+      "Automated classification",
+      "Batch processing support",
+    ],
+    benefits: [
+      { title: "90% Faster", description: "Accelerate document processing times" },
+      { title: "99% Accuracy", description: "High-precision data extraction" },
+      { title: "Scalable", description: "Process millions of documents effortlessly" },
+    ],
+  },
 ]
 
 export type Product = typeof products[number]
