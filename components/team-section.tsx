@@ -49,8 +49,8 @@ const teamMembers = [
   },
   {
     name:"Binita Mahto",
-    designation: "Frontend Engineer",
-    description: "Frontend engineer crafting intuitive user interfaces and exceptional user experiences.",
+    designation: "Backend Engineer",
+    description: "Backend engineer specializing in database design, system optimization, and robust security implementations.",
     linkedin: "https://www.linkedin.com/in/binitamahto/",
     image: "/profile/binita.jpeg",
   }
