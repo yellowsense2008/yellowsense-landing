@@ -21,8 +21,9 @@ export function Navbar() {
         { label: "Industrial Fault Detection", desc: "AI-powered anomaly detection", href: "/products/fault-detection" },
         { label: "Confidential Clean Rooms", desc: "Secure data environments", href: "/products/clean-rooms" },
         { label: "TTS Model", desc: "Natural voice synthesis AI", href: "/products/sys-pin-tts" },
-        { label: "Cybersecurity", desc: "Proactive threat detection", href: "/products/cybersecurity" },
         { label: "Encryption & Security Platform", desc: "Advanced data protection", href: "/products/encryption-platform" },
+        { label: "Document Processing", desc: "Intelligent document automation", href: "/products/document-processing" },
+        { label: "eTappal Automation", desc: "Smart government workflows", href: "/products/etappal-automation" },
       ]
     },
     { href: "/#about", label: "About Us" },
