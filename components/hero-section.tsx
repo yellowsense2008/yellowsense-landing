@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Shield, Cpu, Database, Volume2, Key, FileText, LucideIcon } from "lucide-react"
+import { ArrowRight, Shield, Cpu, Database, Volume2, Key, FileText, FileStack, LucideIcon } from "lucide-react"
 import { motion } from "framer-motion"
 import { AnimatedBlobs } from "./animated-blobs"
 import { products, IconName } from "@/lib/products"
@@ -15,6 +15,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Volume2,
   Key,
   FileText,
+  FileStack,
 }
 
 export function HeroSection() {

@@ -61,7 +61,8 @@ export const products = [
     iconName: "Database" as const,
     color: "#10b981", // Emerald-500
     gradient: "from-emerald-500 to-teal-600",
-    hasVideo: false,
+    hasVideo: true,
+    videoSrc: "/video/YellowSense-jkcement-full-demo.mp4",
     features: [
       "End-to-end encryption",
       "Granular access controls",
@@ -152,6 +153,33 @@ export const products = [
       { title: "90% Faster", description: "Accelerate document processing times" },
       { title: "99% Accuracy", description: "High-precision data extraction" },
       { title: "Scalable", description: "Process millions of documents effortlessly" },
+    ],
+  },
+  {
+    id: "etappal-automation",
+    slug: "etappal-automation",
+    tagline: "SMART GOVERNMENT WORKFLOWS",
+    name: "eTappal Automation",
+    shortDescription: "AI/ML-powered system for automated analysis, categorization, and digital routing of administrative documents.",
+    description: "Streamline administrative operations with our eTappal Workflow Automation. This AI-driven solution automatically ingests scanned or digital eTappals, extracts subject and content using advanced NLP, categorizes them, and intelligently routes them to the appropriate officers. By replacing manual segregation with automated workflows, we ensure faster processing, accurate delivery, and complete digital traceability.",
+    iconName: "FileStack" as const,
+    color: "#ec4899", // Pink-500
+    gradient: "from-pink-500 to-rose-600",
+    hasVideo: true,
+    videoSrc: "/video/nascom-dataprocess-1767074832190.mp4",
+    demoUrl: "https://huggingface.co/spaces/Abhimanyu42/etappal-ai",
+    features: [
+      "Automated eTappal Analysis",
+      "Intelligent Content Extraction",
+      "Subject Categorization",
+      "Auto-Routing to Officers",
+      "Digital Record Maintenance",
+      "Traceability & Audit Logs",
+    ],
+    benefits: [
+      { title: "Zero Manual Routing", description: "Fully automated document distribution" },
+      { title: "80% Faster", description: "Significantly reduce processing time" },
+      { title: "100% Traceable", description: "Complete digital audit trails" },
     ],
   },
 ]

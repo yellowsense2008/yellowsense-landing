@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowLeft, Check, ArrowRight, Shield, Cpu, Database, Volume2, Key, FileText, LucideIcon } from "lucide-react"
+import { ArrowLeft, Check, ArrowRight, Shield, Cpu, Database, Volume2, Key, FileText, FileStack, LucideIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Product, IconName } from "@/lib/products"
 
@@ -13,6 +13,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Volume2,
   Key,
   FileText,
+  FileStack,
 }
 
 interface ProductPageContentProps {
@@ -70,20 +71,25 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg"
-                  className={`rounded-full px-8 gap-2 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90 transition-opacity`}
-                >
-                  Request Demo
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="rounded-full px-8"
-                >
-                  Contact Sales
-                </Button>
+                {product.demoUrl ? (
+                  <Link href={product.demoUrl} target="_blank" rel="noopener noreferrer">
+                    <Button 
+                      size="lg"
+                      className={`rounded-full px-8 gap-2 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90 transition-opacity`}
+                    >
+                      See Demo
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button 
+                    size="lg"
+                    className={`rounded-full px-8 gap-2 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90 transition-opacity`}
+                  >
+                    Request Demo
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                )}
               </div>
             </motion.div>
 
@@ -215,18 +221,30 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
               Transform your operations with {product.name}. Contact our team for a personalized demo.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button 
-                size="lg"
-                className={`rounded-full px-8 gap-2 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90`}
-              >
-                Schedule Demo
-                <ArrowRight className="w-4 h-4" />
-              </Button>
+              {product.demoUrl ? (
+                <Link href={product.demoUrl} target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    size="lg"
+                    className={`rounded-full px-8 gap-2 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90`}
+                  >
+                    See Demo
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+              ) : (
+                <Button 
+                  size="lg"
+                  className={`rounded-full px-8 gap-2 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90`}
+                >
+                  Schedule Demo
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              )}
               <Link href="/#contact">
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="rounded-full px-8 border-white/30 text-white hover:bg-white/10"
+                  className="rounded-full px-8 border-white/50 text-white hover:bg-white/10"
                 >
                   Contact Us
                 </Button>
