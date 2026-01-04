@@ -175,3 +175,140 @@ Check the render method of `ProductPageContent`.
 [107:25:51.424] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/products/naval-innovation","route":"/products/[slug]"}
 [107:25:51.424] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/naval-innovation color: rgb(120, 120, 120) color: inherit {"dp":"/products/[slug]","o":"http://localhost:3000/products/naval-innovation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767536005013}
 [107:26:56.693] Server  LOG      ✓ Compiled in 60ms
+[107:34:56.869] Server  LOG      ✓ Compiled in 63ms
+[107:34:57.074] Browser ERROR   ./components/product-page-content.tsx:385:21
+Parsing ecmascript source code failed
+  383 |                   </Button>
+  384 |                 </Link>
+> 385 |               <Link href="/#contact">
+      |                     ^^^^
+  386 |                 <Button 
+  387 |                   size="lg" 
+  388 |                   variant="outline"
+
+Expected '</', got 'href'
+
+Import trace:
+  Server Component:
+    ./components/product-page-content.tsx
+    ./app/products/[slug]/page.tsx
+[107:36:08.199] Server  ERROR    ⨯ ./components/product-page-content.tsx:385:21
+Parsing ecmascript source code failed
+  383 |                   </Button>
+  384 |                 </Link>
+> 385 |               <Link href="/#contact">
+      |                     ^^^^
+  386 |                 <Button 
+  387 |                   size="lg" 
+  388 |                   variant="outline"
+
+Expected '</', got 'href'
+
+Import trace:
+  Server Component:
+    ./components/product-page-content.tsx
+    ./app/products/[slug]/page.tsx
+
+
+[107:36:08.318] Browser ERROR   ./components/product-page-content.tsx:385:21
+Parsing ecmascript source code failed
+  383 |                   </Button>
+  384 |                 </Link>
+> 385 |               <Link href="/#contact">
+      |                     ^^^^
+  386 |                 <Button 
+  387 |                   size="lg" 
+  388 |                   variant="outline"
+
+Expected '</', got 'href'
+
+Import trace:
+  Server Component:
+    ./components/product-page-content.tsx
+    ./app/products/[slug]/page.tsx
+[107:36:08.925] Browser ERROR   ./components/product-page-content.tsx:385:21
+Parsing ecmascript source code failed
+  383 |                   </Button>
+  384 |                 </Link>
+> 385 |               <Link href="/#contact">
+      |                     ^^^^
+  386 |                 <Button 
+  387 |                   size="lg" 
+  388 |                   variant="outline"
+
+Expected '</', got 'href'
+
+Import trace:
+  Server Component:
+    ./components/product-page-content.tsx
+    ./app/products/[slug]/page.tsx
+[107:36:08.925] Browser ERROR   ./components/product-page-content.tsx:385:21
+Parsing ecmascript source code failed
+  383 |                   </Button>
+  384 |                 </Link>
+> 385 |               <Link href="/#contact">
+      |                     ^^^^
+  386 |                 <Button 
+  387 |                   size="lg" 
+  388 |                   variant="outline"
+
+Expected '</', got 'href'
+
+Import trace:
+  Server Component:
+    ./components/product-page-content.tsx
+    ./app/products/[slug]/page.tsx
+[107:36:09.003] Browser ERROR   uncaughtError: Error: ./components/product-page-content.tsx:385:21
+Parsing ecmascript source code failed
+  383 |                   </Button>
+  384 |                 </Link>
+> 385 |               <Link href="/#contact">
+      |                     ^^^^
+  386 |                 <Button 
+  387 |                   size="lg" 
+  388 |                   variant="outline"
+
+Expected '</', got 'href'
+
+Import trace:
+  Server Component:
+    ./components/product-page-content.tsx
+    ./app/products/[slug]/page.tsx
+
+
+[107:36:09.156] Browser ERROR   ./components/product-page-content.tsx:385:21
+Parsing ecmascript source code failed
+  383 |                   </Button>
+  384 |                 </Link>
+> 385 |               <Link href="/#contact">
+      |                     ^^^^
+  386 |                 <Button 
+  387 |                   size="lg" 
+  388 |                   variant="outline"
+
+Expected '</', got 'href'
+
+Import trace:
+  Server Component:
+    ./components/product-page-content.tsx
+    ./app/products/[slug]/page.tsx
+[107:36:09.156] Browser ERROR   ./components/product-page-content.tsx:385:21
+Parsing ecmascript source code failed
+  383 |                   </Button>
+  384 |                 </Link>
+> 385 |               <Link href="/#contact">
+      |                     ^^^^
+  386 |                 <Button 
+  387 |                   size="lg" 
+  388 |                   variant="outline"
+
+Expected '</', got 'href'
+
+Import trace:
+  Server Component:
+    ./components/product-page-content.tsx
+    ./app/products/[slug]/page.tsx
+[107:36:09.562] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[107:36:10.292] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[107:36:10.292] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/products/naval-innovation","route":"/products/[slug]"}
+[107:36:10.292] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/naval-innovation color: rgb(120, 120, 120) color: inherit {"dp":"/products/[slug]","o":"http://localhost:3000/products/naval-innovation","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767536623877}

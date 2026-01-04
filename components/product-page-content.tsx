@@ -372,7 +372,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
               Transform your operations with {product.name}. Contact our team for a personalized demo.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {product.demoUrl ? (
+              {product.demoUrl && (
                 <Link href={product.demoUrl} target="_blank" rel="noopener noreferrer">
                   <Button 
                     size="lg"
@@ -382,14 +382,6 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
-              ) : (
-                <Button 
-                  size="lg"
-                  className={`rounded-full px-8 gap-2 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90`}
-                >
-                  Schedule Demo
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
               )}
               {product.detailsUrl && (
                 <Link href={product.detailsUrl} target="_blank" rel="noopener noreferrer">
