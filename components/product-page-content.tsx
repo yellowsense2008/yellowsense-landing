@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowLeft, Check, ArrowRight, Shield, Cpu, Database, Volume2, Key, FileText, FileStack, ShieldCheck, Fingerprint, Anchor, Radar, LucideIcon } from "lucide-react"
+import { ArrowLeft, Check, ArrowRight, Shield, Cpu, Database, Volume2, Key, FileText, FileStack, ShieldCheck, Fingerprint, Anchor, Radar, Lock, LucideIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Product, IconName } from "@/lib/products"
 
@@ -18,6 +18,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Fingerprint,
   Anchor,
   Radar,
+  Lock,
 }
 
 interface ProductPageContentProps {
@@ -85,15 +86,8 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   </Link>
-                ) : (
-                  <Button 
-                    size="lg"
-                    className={`rounded-full px-8 gap-2 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90 transition-opacity`}
-                  >
-                    Request Demo
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                )}
+                ) : null}
+                {/* Removed Request Demo button as per request */}
                 {product.detailsUrl && (
                   <Link href={product.detailsUrl} target="_blank" rel="noopener noreferrer">
                     <Button 
