@@ -221,6 +221,148 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
         </div>
       </section>
 
+      {/* Additional Products Section */}
+      {product.additionalProducts?.map((subProduct, index) => {
+        const SubIcon = iconMap[subProduct.iconName]
+        return (
+          <section key={subProduct.id} className="py-20 border-t border-border/30 bg-secondary/10">
+            <div className="container mx-auto px-4 lg:px-8">
+              <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div 
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+                    style={{ backgroundColor: `${subProduct.color}20` }}
+                  >
+                    <SubIcon className="w-4 h-4" style={{ color: subProduct.color }} />
+                    <span 
+                      className="text-xs font-semibold uppercase tracking-wider"
+                      style={{ color: subProduct.color }}
+                    >
+                      {subProduct.tagline}
+                    </span>
+                  </div>
+
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    {subProduct.name}
+                  </h2>
+
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                    {subProduct.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-4">
+                    {subProduct.demoUrl ? (
+                      <Link href={subProduct.demoUrl} target="_blank" rel="noopener noreferrer">
+                        <Button 
+                          size="lg"
+                          className={`rounded-full px-8 gap-2 bg-gradient-to-r ${subProduct.gradient} text-white hover:opacity-90 transition-opacity`}
+                        >
+                          See Demo
+                          <ArrowRight className="w-4 h-4" />
+                        </Button>
+                      </Link>
+                    ) : null}
+                    {subProduct.detailsUrl && (
+                      <Link href={subProduct.detailsUrl} target="_blank" rel="noopener noreferrer">
+                        <Button 
+                          size="lg" 
+                          variant="outline"
+                          className="rounded-full px-8"
+                        >
+                          See Details
+                        </Button>
+                      </Link>
+                    )}
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="relative"
+                >
+                  {subProduct.hasVideo && subProduct.videoSrc ? (
+                    <div className="rounded-2xl overflow-hidden shadow-2xl border border-border/30">
+                      <video
+                        src={subProduct.videoSrc}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto object-contain bg-white"
+                      />
+                    </div>
+                  ) : (
+                    <div 
+                      className="aspect-video rounded-2xl flex items-center justify-center"
+                      style={{ backgroundColor: `${subProduct.color}10` }}
+                    >
+                      <div 
+                        className="w-32 h-32 rounded-2xl flex items-center justify-center"
+                        style={{ backgroundColor: `${subProduct.color}20` }}
+                      >
+                        <SubIcon className="w-16 h-16" style={{ color: subProduct.color }} />
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
+              </div>
+
+              {/* Sub-product Features */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                {subProduct.features.map((feature, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="bg-card rounded-xl p-6 border border-border hover:border-amber-200 hover:shadow-md transition-all"
+                  >
+                    <div 
+                      className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                      style={{ backgroundColor: `${subProduct.color}20` }}
+                    >
+                      <Check className="w-5 h-5" style={{ color: subProduct.color }} />
+                    </div>
+                    <h3 className="font-semibold text-foreground">{feature}</h3>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Sub-product Benefits */}
+              <div className="grid md:grid-cols-3 gap-8">
+                {subProduct.benefits.map((benefit, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="text-center"
+                  >
+                    <div 
+                      className="text-3xl md:text-4xl font-bold mb-2"
+                      style={{ color: subProduct.color }}
+                    >
+                      {benefit.title}
+                    </div>
+                    <p className="text-muted-foreground">{benefit.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      })}
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-gray-900 to-gray-800">
         <div className="container mx-auto px-4 lg:px-8 text-center">

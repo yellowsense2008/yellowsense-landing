@@ -27,7 +27,6 @@ export function Navbar() {
         { label: "Compliance Monitoring System", desc: "Automated regulatory compliance", href: "/products/compliance-monitoring" },
         { label: "Contactless Fingerprint", desc: "Biometric security", href: "/products/fingerprint-authentication" },
         { label: "Naval Innovation", desc: "Maritime intelligence", href: "/products/naval-innovation" },
-        { label: "Advanced Anomaly Detection", desc: "Intelligent threat analysis", href: "/products/advanced-anomaly-detection" },
       ]
     },
     { href: "/#about", label: "About Us" },
