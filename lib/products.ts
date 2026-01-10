@@ -320,6 +320,34 @@ export const products = [
       },
     ],
   },
+  {
+    id: "nsws-schema-sync",
+    slug: "nsws-schema-sync",
+    tagline: "UNIFIED DATA INTEGRATION",
+    name: "NSWS Schema Sync Dashboard",
+    shortDescription: "A comprehensive dashboard for the National Single Window System (NSWS) to streamline schema synchronization and data consistency.",
+    description: "Streamline regulatory approvals with our NSWS Schema Sync Dashboard. Designed for the National Single Window System, this solution ensures seamless synchronization of data schemas across various government departments. It provides a centralized interface for monitoring data integrity, automating updates, and ensuring that all stakeholders operate with the most current regulatory information.",
+    iconName: "LayoutDashboard" as const,
+    color: "#a855f7", // Purple-500
+    gradient: "from-purple-500 to-indigo-600",
+    hasVideo: true,
+    videoSrc: "/video/The NSWS Schema Sync Dashboard.mp4",
+    demoUrl: "https://drive.google.com/file/d/1jYwgg__llfHzmvx-qaK1y3Y42Kl-aex2/view?usp=share_link",
+    detailsUrl: "https://drive.google.com/file/d/1Vn2zZBD630apqBB_rgtwG4CMJbFXD3lj/view?usp=share_link",
+    features: [
+      "Unified Schema Synchronization",
+      "Multi-department Data Integration",
+      "Real-time Compliance Updates",
+      "Automated Regulatory Mapping",
+      "Centralized Dashboard Interface",
+      "Secure Data Exchange Protocol",
+    ],
+    benefits: [
+      { title: "Unified View", description: "Single source of truth for regulatory data" },
+      { title: "Real-time Sync", description: "Instant updates across all departments" },
+      { title: "Simplified Compliance", description: "Streamline complex approval workflows" },
+    ],
+  },
 ]
 
 export type Product = typeof products[number]

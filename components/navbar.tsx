@@ -27,6 +27,7 @@ export function Navbar() {
         { label: "Compliance Monitoring System", desc: "Automated regulatory compliance", href: "/products/compliance-monitoring" },
         { label: "Contactless Fingerprint", desc: "Biometric security", href: "/products/fingerprint-authentication" },
         { label: "Naval Innovation", desc: "Maritime intelligence", href: "/products/naval-innovation" },
+        { label: "NSWS Schema Sync", desc: "Unified data integration", href: "/products/nsws-schema-sync" },
       ]
     },
     { href: "/#about", label: "About Us" },
