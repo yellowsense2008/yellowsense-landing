@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowLeft, Check, ArrowRight, Shield, Cpu, Database, Volume2, Key, FileText, FileStack, ShieldCheck, Fingerprint, Anchor, Radar, Lock, LayoutDashboard, LucideIcon } from "lucide-react"
+import { ArrowLeft, Check, ArrowRight, Shield, Cpu, Database, Volume2, Key, FileText, FileStack, ShieldCheck, Fingerprint, Anchor, Radar, Lock, LayoutDashboard, Droplets, Zap, Building2, LucideIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Product, IconName } from "@/lib/products"
 
@@ -20,6 +20,9 @@ const iconMap: Record<IconName, LucideIcon> = {
   Radar,
   Lock,
   LayoutDashboard,
+  Droplets,
+  Zap,
+  Building2,
 }
 
 interface ProductPageContentProps {

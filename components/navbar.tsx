@@ -28,6 +28,7 @@ export function Navbar() {
         { label: "Contactless Fingerprint", desc: "Biometric security", href: "/products/fingerprint-authentication" },
         { label: "Naval Innovation", desc: "Maritime intelligence", href: "/products/naval-innovation" },
         { label: "NSWS Schema Sync", desc: "Unified data integration", href: "/products/nsws-schema-sync" },
+        { label: "TASCO Solutions", desc: "Integrated industrial solutions", href: "/products/tasco-solutions" },
       ]
     },
     { href: "/#about", label: "About Us" },
