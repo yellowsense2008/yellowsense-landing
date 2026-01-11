@@ -410,7 +410,7 @@ export const products = [
         color: "#eab308", // Yellow-500
         gradient: "from-yellow-500 to-amber-600",
         hasVideo: false,
-        detailsUrl: "/Yellowsense Technology DNP energy.pdf",
+        detailsUrl: "https://drive.google.com/file/d/1Pua4U3Rd6IcIJXeI0ajc6XzerXMb-Ph1/view?usp=share_link",
         features: [
           "Real-time energy monitoring",
           "Usage pattern analysis",
