@@ -436,7 +436,7 @@ export const products = [
         color: "#10b981", // Emerald-500
         gradient: "from-emerald-500 to-green-600",
         hasVideo: false,
-        detailsUrl: "https://drive.google.com/file/d/1VDPPpSNoY7aaJ_d13qfBQJ9TDx6aCyhj/view?usp=share_link",
+        detailsUrl: "https://drive.google.com/file/d/13JDPVQOHuBgV1LerVsy_XJBMD5I_B3rn/view?usp=share_link",
         features: [
           "Automated compliance checks",
           "Regulatory gap analysis",
