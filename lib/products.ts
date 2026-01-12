@@ -349,6 +349,43 @@ export const products = [
     ],
   },
   {
+    id: "nutrition-ai",
+    slug: "nutrition-ai",
+    tagline: "AI-POWERED NUTRITION INTELLIGENCE",
+    name: "Nutrition AI Platform",
+    shortDescription:
+      "AI-driven nutrition analysis for personalized and population-scale health insights.",
+    description:
+      "Nutrition AI leverages advanced machine learning to analyze dietary patterns, nutritional intake, and health indicators to deliver personalized nutrition recommendations at scale.",
+    iconName: "Database" as const,
+    color: "#22c55e", // Green-400
+    gradient: "from-green-400 to-emerald-600",
+    hasVideo: false,
+  
+    features: [
+      "Personalized nutrition recommendations",
+      "Dietary pattern analysis",
+      "Macro & micronutrient tracking",
+      "Health goal optimization",
+      "Population-level insights",
+    ],
+  
+    benefits: [
+      {
+        title: "Personalized Health",
+        description: "AI-driven diet plans tailored to individual needs.",
+      },
+      {
+        title: "Data-Backed Decisions",
+        description: "Nutrition insights powered by real-world data.",
+      },
+      {
+        title: "Scalable Intelligence",
+        description: "Deployable for enterprises, hospitals, and programs.",
+      },
+    ],
+  },
+  {
     id: "tasco-solutions",
     slug: "tasco-solutions",
     tagline: "INTEGRATED INDUSTRIAL SOLUTIONS",
