@@ -26,6 +26,7 @@ export function Navbar() {
         { label: "eTappal Automation", desc: "Smart government workflows", href: "/products/etappal-automation" },
         { label: "Compliance Monitoring System", desc: "Automated regulatory compliance", href: "/products/compliance-monitoring" },
         { label: "Contactless Fingerprint", desc: "Biometric security", href: "/products/fingerprint-authentication" },
+        { label: "Face Liveness Detection", desc: "AI-powered liveness verification", href: "/products/face-liveness-detection" },
         { label: "Naval Innovation", desc: "Maritime intelligence", href: "/products/naval-innovation" },
         { label: "NSWS Schema Sync", desc: "Unified data integration", href: "/products/nsws-schema-sync" },
         { label: "Nutrition AI Platform", desc: "AI-powered nutrition intelligence", href: "/products/nutrition-ai" },

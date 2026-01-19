@@ -238,6 +238,48 @@ export const products = [
     ],
   },
   {
+    id: "face-liveness",
+    slug: "face-liveness-detection",
+    tagline: "AI-POWERED IDENTITY ASSURANCE",
+    name: "Face Liveness Detection",
+    shortDescription:
+      "AI-powered liveness verification to prevent spoofing attacks during identity authentication.",
+    description:
+      "Face Liveness Detection uses real-time computer vision and AI to verify that a live person is present during authentication. It actively prevents spoofing attempts such as photos, videos, or screen replays by analyzing facial motion, depth cues, and challenge-response behavior in real time.",
+    iconName: "ShieldCheck" as const,
+    color: "#14b8a6", // Teal-400
+    gradient: "from-green-400 to-emerald-600",
+    hasVideo: false,
+  
+    features: [
+      "Real-time liveness verification",
+      "Passive and active liveness checks",
+      "WebSocket-based live processing",
+      "Spoof attack prevention",
+      "Session-based verification",
+      "Health & availability monitoring",
+      "Safe concurrency handling",
+    ],
+  
+    benefits: [
+      {
+        title: "Real-Time",
+        description: "Low-latency streaming with instant liveness decisions.",
+      },
+      {
+        title: "Secure",
+        description:
+          "Session-isolated processing with automatic cleanup after verification.",
+      },
+      {
+        title: "Reliable",
+        description:
+          "Guaranteed state recovery even during disconnects or failures.",
+      },
+    ],
+  },
+
+  {
     id: "naval-innovation",
     slug: "naval-innovation",
     tagline: "MARITIME INTELLIGENCE",
