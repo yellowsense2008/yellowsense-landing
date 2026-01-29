@@ -14,7 +14,7 @@ export function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     { 
-      href: "/#products", 
+      href: "/?scroll=products", 
       label: "Products",
       dropdown: [
         { label: "Fraud Detection", desc: "Real-time transaction monitoring", href: "/products/fraud-detection" },

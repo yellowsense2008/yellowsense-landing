@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { ArrowLeft, Check, ArrowRight, Shield, Cpu, Database, Volume2, Key, FileText, FileStack, ShieldCheck, Fingerprint, Anchor, Radar, Lock, LayoutDashboard, Droplets, Zap, Building2, LucideIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Product, IconName } from "@/lib/products"
+import { useRouter } from "next/navigation"
 
 const iconMap: Record<IconName, LucideIcon> = {
   Shield,
@@ -30,6 +31,7 @@ interface ProductPageContentProps {
 }
 
 export function ProductPageContent({ product }: ProductPageContentProps) {
+  const router = useRouter()
   const Icon = iconMap[product.iconName]
 
   return (
@@ -43,13 +45,15 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           {/* Back button */}
-          <Link 
-            href="/#products" 
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Products
-          </Link>
+          <button
+  onClick={() => {
+    router.push("/?scroll=products")
+  }}
+  className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
+>
+  <ArrowLeft className="w-4 h-4" />
+  Back to Products
+</button>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}

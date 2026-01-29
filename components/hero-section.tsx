@@ -122,7 +122,7 @@ export function HeroSection() {
         </div>
 
         {/* Products Grid with 3D Cards */}
-        <div id="products" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto items-stretch">
+        <div id="products" className="scroll-mt-32 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto items-stretch">
           {products.map((product, index) => {
             const Icon = iconMap[product.iconName]
             return (

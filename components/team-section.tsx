@@ -27,11 +27,11 @@ const teamMembers = [
     image: "/profile/animesh.png",
   },
   {
-    name: "Kushagra",
-    designation: "Frontend Engineer",
-    description: "Frontend engineer crafting intuitive user interfaces and exceptional user experiences.",
-    linkedin: "https://www.linkedin.com/in/kushagra2503/",
-    image: "/profile/kush.jpeg",
+    name: "Dweep Solanki",
+    designation: "SDE-1",
+    description: "Software Development Engineer specializing in building scalable web applications, AI-driven security solutions, and enterprise-grade platforms.",
+    linkedin: "https://www.linkedin.com/in/dweep-solanki",
+    image: "/profile/dweep.jpg",
   },
   {
     name: "Abhimanyu Malik",
@@ -53,7 +53,14 @@ const teamMembers = [
     description: "Backend engineer specializing in database design, system optimization, and robust security implementations.",
     linkedin: "https://www.linkedin.com/in/binitamahto/",
     image: "/profile/binita.jpeg",
-  }
+  },
+  {
+    name: "Ishita Singh",
+    designation: "SDE-Intern",
+    description: "Full-stack developer skilled in building APK applications using React Native, along with Python, Django, and REST APIs.",
+    linkedin: "https://www.linkedin.com/in/ishita-singh-0b8449339/",
+    image: "/profile/ishita.jpg",
+  },
 ]
 
 export function TeamSection() {
